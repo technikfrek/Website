@@ -1,0 +1,75 @@
+---
+---
+
+<nav>
+	<div class="logo-container">
+		<img src="/assets/images/logo.svg" />
+	</div>
+	<div class="desktop-menu">
+		<ul>
+			<li><a href="#Dienstleistungen">Dienstleistungen</a></li>
+			<li><a href="#Referenzen">Referenzen</a></li>
+			<li><a href="#Zertifizierungen">Zertifizierungen</a></li>
+			<li><a href="#Kontakt">Kontakt</a></li>
+		</ul>
+	</div>
+	<div class="mobile-menu-burger"></div>
+</nav>
+<style>
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 2rem;
+	}
+	nav div {
+		display: flex;
+		align-items: center;
+		height: 80px;
+	}
+
+	.logo-container img {
+		height: 100%;
+	}
+
+	.logo-container {
+		width: 300px !important;
+	}
+	.mobile-menu-burger {
+		width: 300px !important;
+	}
+	.desktop-menu ul {
+		display: flex;
+		list-style: none;
+		justify-content: space-evenly;
+		gap: 2rem;
+	}
+	.desktop-menu ul a {
+		font-size: 1.2rem;
+		text-decoration: none !important;
+		color: black;
+		transition: all 0.2s ease-in-out;
+		display: inline-block;
+		position: relative;
+	}
+	.desktop-menu ul a:hover {
+		color: #0087ca;
+	}
+	.desktop-menu ul a::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: #0087ca;
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+	}
+
+	.desktop-menu ul a:hover::after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+</style>
