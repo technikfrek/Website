@@ -1,0 +1,36 @@
+---
+export interface Props {
+	title: string;
+	subtitle: string;
+	image: string;
+}
+
+const { title, subtitle, image } = Astro.props;
+---
+
+<div class="headerContainer">
+	<div class="header">
+		<h1>{title}</h1>
+		<p>{subtitle}</p>
+	</div>
+	<div class="headerImage">
+		<img src={image} />
+	</div>
+</div>
+<style>
+	.headerContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.header {
+		width: 50%;
+	}
+	.headerImage {
+		width: 50%;
+	}
+	.headerImage img {
+		width: 100%;
+	}
+</style>

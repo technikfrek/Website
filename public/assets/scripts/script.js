@@ -43,3 +43,30 @@ horizontalSections.forEach(function (sec, i) {
   });
 
 });	
+
+const fx11Titles = [...document.querySelectorAll('.content__title[data-splitting][data-effect11]')];
+
+fx11Titles.forEach(title => {
+        
+  const chars = title.querySelectorAll('.char');
+  wrapElements(chars, 'span', 'char-wrap');
+
+  gsap.set(chars, { 
+      'will-change': 'transform', 
+      transformOrigin: '0% 50%',
+      xPercent: 105,
+  });
+  gsap.to(chars, {
+      duration: 1,
+      ease: 'expo',
+      xPercent: 0,
+      stagger: 0.042,
+      scrollTrigger: {
+          trigger: title,
+          start: 'top bottom',
+          end: 'top top+=10%',
+          toggleActions: "play resume resume reset",
+      }
+  });
+
+});

@@ -95,9 +95,8 @@ html, body, section.horizontal {
 }
 
 body { 
-  font-family: "Druk Wide Web", sans-serif; 
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
-  
   margin: 0;
   padding: 0;
 }

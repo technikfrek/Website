@@ -1,10 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+// components
+import Header from '../components/astroHeader.astro';
+
 ---
 
 <Layout title="Home">
-	<main>
+	<Header 
+		title="Welcome to Astro"
+		subtitle="A modern static site generator for the component era."
+		image="https://astro.build/assets/astro-logo.png"
+	 />
+	<!-- <main>
 		<h1>Hello World 1</h1>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
@@ -32,7 +41,7 @@ import Card from '../components/Card.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
-	</main>
+	</main> -->
 </Layout>
 
 <style>
