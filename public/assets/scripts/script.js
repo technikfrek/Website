@@ -44,7 +44,7 @@ horizontalSections.forEach(function (sec, i) {
 
 });	
 
-const fx11Titles = [...document.querySelectorAll('.content__title[data-splitting][data-effect11]')];
+const fx11Titles = [...document.querySelectorAll('.content__title[data-splitting]')];
 
 fx11Titles.forEach(title => {
         
@@ -70,3 +70,4 @@ fx11Titles.forEach(title => {
   });
 
 });
+

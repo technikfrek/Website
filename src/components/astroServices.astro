@@ -1,0 +1,27 @@
+---
+export interface Props {
+	title: string;
+	subtitle: string;
+	ID: string;
+}
+
+const { title, subtitle, ID } = Astro.props;
+---
+
+<div class="servicesContainer" id={ID}>
+	<div class="services">
+		<h1 class="content__title" data-splitting >{title}</h1>
+		<p>{subtitle}</p>
+	</div>
+</div>
+<style>
+	.servicesContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.services {
+		
+	}
+</style>
