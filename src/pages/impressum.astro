@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// fetch data from the API
+let regex: RegExp = /<body>([\s\S]*?)<\/footer>/gm;
+let source = await fetch("https://itrk.legal/ynp.2J.sRr.html?imp=1")
+	.then((response) => response.text())
+	.then((text) => text.match(regex)[0])
+	.then((text) =>
+		text
+			.replace(/<body>/gm, "")
+			.replace(/<\/footer>/gm, "")
+			.replace(/https:\/\/www\.it-recht-kanzlei\.de\/gfx\/Logos\/logo-fairness-160\.png/gm, "/assets/images/external/logo-fairness-160.png")
+	);
+---
+
+<Layout title="Impressum">
+	<div class="impressumWrapper">
+		<h1>Impressum & Haftungsausschluss</h1>
+		<div class="impressumContainer">
+			<div class="container" set:html={source} />
+		</div>
+	</div>
+</Layout>
+
+<style>
+	h1 {
+		text-align: center;
+	}
+	.impressumWrapper {
+		display: flex;
+		flex-direction: column;
+		padding-top: 150px;
+		padding-bottom: 150px;
+	}
+	.impressumContainer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.impressumContainer > div {
+		width: 100%;
+		max-width: 90vw;
+	}
+</style>
