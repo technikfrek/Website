@@ -14,6 +14,10 @@ ScrollTrigger.scrollerProxy(document.body, {
 
 bodyScrollBar.addListener(ScrollTrigger.update);
 
+
+
+
+
 const horizontalSections = gsap.utils.toArray('section.horizontal')
 
 horizontalSections.forEach(function (sec, i) {	
@@ -44,30 +48,11 @@ horizontalSections.forEach(function (sec, i) {
 
 });	
 
-const fx11Titles = [...document.querySelectorAll('.content__title[data-splitting]')];
+// This part is only necessary if you're using ScrollTrigger's markers:
+if (document.querySelector('.gsap-marker-scroller-start')) {		  
+  const markers = gsap.utils.toArray('[class *= "gsap-marker"]');	
+  bodyScrollBar.addListener(({ offset }) => gsap.set(markers, { marginTop: -offset.y }));
+}
+// End section necessary only if you're using ScrollTrigger's markers
 
-fx11Titles.forEach(title => {
-        
-  const chars = title.querySelectorAll('.char');
-  wrapElements(chars, 'span', 'char-wrap');
-
-  gsap.set(chars, { 
-      'will-change': 'transform', 
-      transformOrigin: '0% 50%',
-      xPercent: 105,
-  });
-  gsap.to(chars, {
-      duration: 1,
-      ease: 'expo',
-      xPercent: 0,
-      stagger: 0.042,
-      scrollTrigger: {
-          trigger: title,
-          start: 'top bottom',
-          end: 'top top+=10%',
-          toggleActions: "play resume resume reset",
-      }
-  });
-
-});
 

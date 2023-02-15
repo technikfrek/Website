@@ -2,37 +2,174 @@
 export interface Props {
 	title: string;
 	subtitle: string;
-	image: string;
 	popup: boolean;
 	popupID: string;
+	providerNames: Array<string>;
+	providerLinks: Array<string>;
+	providerImages: Array<string>;
 }
 
-const { title, subtitle, image } = Astro.props;
+const {title, subtitle, image, popup, popupID, providerNames, providerLinks, providerImages} = Astro.props;
 ---
 
-<div class="headerContainer">
-	<div class="header">
-		<h1>{title}</h1>
-		<p>{subtitle}</p>
-	</div>
-	<div class="headerImage">
-		<img src={image} />
+<div class="Service m-calc">
+	<a href={"#" + popupID}>
+		<div class="top-bar"></div>
+		<div class="header">
+			<h3 class="pl">{title}</h3>
+			<p class="pl">{subtitle}</p>
+		</div>
+		<div class="pl headerImage">
+			<img src={image} />
+		</div>
+		<button class={"pl cbutton popup" + popup} role="button">Mehr Informationen</button>
+	</a>
+	<div class="providers">
+		{
+			providerNames.map((name, index) => (
+				<div class="providerContainer">
+					<div class="providerWrapper">
+						<div class="provider">
+							<a href={providerLinks[index]}>
+								<img src={providerImages[index]} />
+								<p>{name}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			))
+		}
 	</div>
 </div>
 <style>
-	.headerContainer {
+	h3,
+	p {
+		color: var(--color-dark);
+	}
+	.Service {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: left;
+		width: 700px;
+		height: 400px;
+		margin-left: 100px !important;
+		background-color: var(--color-white);
+		border-radius: 20px;
+		transition: all 0.1s ease-in-out;
+	}
+	.Service a {
+		text-decoration: none !important;
+	}
+	.Service h3 {
+		font-size: 2rem;
+	}
+	.Service .header p {
+		padding-top: 0!important;
+		padding-bottom: 10px!important;
+		padding-right: 10px!important;
+
+	}
+	.Service:hover {
+		box-shadow: var(--color-primary4) 0 1px 20px;
+		transition: all 0.1s ease-in-out;
+		cursor: pointer;
+	}
+	.Service:hover .top-bar {
+		height: 30px;
+		margin-bottom: 27px!important;
+		transition: all 0.1s ease-in-out;
+	}
+	.m-calc {
+		margin: auto 0;
+	}
+	.top-bar {
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		width: 100%;
+		height: 20px;
+		background-color: var(--color-primary);
+		margin-bottom: 40px!important;
+		transition: all 0.1s ease-in-out;
+	}
+	.cbutton {
+		background-image: linear-gradient(92.88deg, var(--color-primary) 10%, var(--color-primary2) 90%);
+		border-radius: 8px;
+		border-style: none;
+		box-sizing: border-box;
+		color: #ffffff;
+		cursor: pointer;
+		flex-shrink: 0;
+		font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		font-size: 16px;
+		font-weight: 500;
+		height: 50px;
+		width: 200px;
+		padding: 0 1rem;
+		text-align: center;
+		text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+		transition: all 0.5s;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+		margin-left: 10px;
+	}
+
+	.cbutton:hover {
+		box-shadow: var(--color-primary3) 0 1px 30px;
+		transition-duration: 0.1s;
+	}
+
+	.popuptrue {
+		display: block;
+	}
+	.popupfalse {
+		display: none;
+	}
+	.providerContainer {
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+	.providerWrapper {
+		position: absolute;
+		bottom: 10px;
+		width: 100%;
+	}
+
+	.providers {
+		height: 100px;
+		width: 100%;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
 	}
-	.header {
-		width: 50%;
+	.provider {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
 	}
-	.headerImage {
-		width: 50%;
+	.provider a {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
-	.headerImage img {
-		width: 100%;
+	.provider p {
+		font-size: 1rem;
+		font-weight: 800;
+		padding: 0;
+		margin-top: 10px;
+		text-align: center;
+	}
+	.provider img {
+		max-width: 70px;
+		max-height: 50px;
+		margin: 0 auto;
+	}
+	.pl {
+		padding-left: 10px;
 	}
 </style>

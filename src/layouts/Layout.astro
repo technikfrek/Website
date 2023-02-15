@@ -1,9 +1,9 @@
 ---
-import Footer from '../components/astroFooter.astro';
-import Navbar from '../components/astroNavbar.astro';
-import Global from '../components/astroGlobal.astro';
-import Popups from '../components/astroPopups.astro';
 
+import Footer from "../components/astroFooter.astro";
+import Navbar from "../components/astroNavbar.astro";
+import Global from "../components/astroGlobal.astro";
+import Popups from "../components/astroPopups.astro";
 
 export interface Props {
 	title: string;
@@ -19,15 +19,23 @@ const {title} = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} - Petersen IT Services</title>
+		<link rel="stylesheet" href="/assets/styles/fonts.css" />
 		<link rel="stylesheet" href="/assets/styles/style.css" />
 	</head>
-	<body id="main-scrollbar"> 
-		<Navbar />
-		<slot />
-		<Footer />
-		<Global />
-		<Popups />
+	<body id="main-scrollbar">
+		<!-- <div id="viewport">
+			<div id="content"> -->
+				<Navbar />
+				<slot />
+				<Footer />
+				<Global />
+				<Popups />
+			<!-- </div>
+		</div> -->
 	</body>
 	<script is:inline src="/assets/scripts/framework.js"></script>
 	<script is:inline src="/assets/scripts/script.js"></script>
 </html>
+<style>
+
+</style>

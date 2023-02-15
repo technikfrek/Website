@@ -1,6 +1,14 @@
 /* root colors */
 :root {
-	--primary-color: #0f94cf;
+	--color-primary: #0f94cf;
+	--color-primary2: #2a70c0;
+	--color-primary3: rgb(46, 86, 160);
+	--color-primary4: rgba(19, 28, 44, 0.5);
+	--color-dark: #16242b;
+	--color-lightgrey: rgb(211, 211, 211);
+	--color-white: #ffffff;
+  --primary-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  --title-font: 'Klarheit Kurrent';
 }
 
 
@@ -9,7 +17,7 @@ html, body, section.horizontal {
 }
 
 body { 
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: var(--primary-font);
   font-weight: 100;
   margin: 0;
   padding: 0;
@@ -22,14 +30,20 @@ body#main-scrollbar{
   margin: 0;
 }
 
+h1, h2, h3 {
+  font-family: var(--title-font);
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
 h1 {
   margin: 0;
-  padding: 50px 0 0 50px;
+  padding: 20px 0 0 20px;
 }
 
 p {
   margin: 0;
-  padding: 50px 0 50px 50px;
+  padding: 20px 0 20px 20px;
 }
 
 section {
