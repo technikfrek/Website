@@ -9,7 +9,9 @@
 	--primary-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	--title-font: "Klarheit Kurrent";
 }
-
+.pinscroll {
+	transform: translate3d(0px, 0px, 0px)!important;
+}
 html,
 body,
 section.horizontal {

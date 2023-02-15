@@ -11,6 +11,8 @@
 	document.addEventListener("DOMContentLoaded", function (event) {
 		var x = document.getElementById("preloader");
 		var y = document.getElementById("preloader-ring");
+		var z = document.querySelector("#main-scrollbar > div.scroll-content")
+		z.classList.add("pinscroll");
 		console.log("Page is loaded");
 		async function sleep(ms) {
 			return new Promise(resolve => setTimeout(resolve, ms));
@@ -24,6 +26,7 @@
 			y.addEventListener("transitionend", function () {
 				x.classList.add("hidden");
 			});
+			z.classList.remove("pinscroll");
 		});
 	});
 </script>
@@ -92,4 +95,5 @@
 		opacity: 0;
 		transition: opacity 2s;
 	}
+	
 </style>
