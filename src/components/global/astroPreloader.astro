@@ -11,13 +11,13 @@
 	document.addEventListener("DOMContentLoaded", function (event) {
 		var x = document.getElementById("preloader");
 		var y = document.getElementById("preloader-ring");
-		var z = document.querySelector("#main-scrollbar > div.scroll-content")
+		var z = document.querySelector("#main-scrollbar > div.scroll-content");
 		z.classList.add("pinscroll");
 		console.log("Page is loaded");
 		async function sleep(ms) {
-			return new Promise(resolve => setTimeout(resolve, ms));
+			return new Promise((resolve) => setTimeout(resolve, ms));
 		}
-		sleep(2000).then(() => {
+		sleep(2).then(() => {
 			x.classList.add("visuallyhidden1");
 			x.addEventListener("transitionend", function () {
 				x.classList.add("hidden");
@@ -43,11 +43,10 @@
 		width: 100vw;
 		height: 100vh;
 		z-index: 999999;
-		background-color: #fff;
+		background-color: var(--background-primary);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
 	}
 	.relative {
 		position: relative;
@@ -84,7 +83,7 @@
 	}
 
 	.hidden {
-		display: none!important;;
+		display: none !important;
 	}
 
 	.visuallyhidden1 {
@@ -95,5 +94,4 @@
 		opacity: 0;
 		transition: opacity 2s;
 	}
-	
 </style>

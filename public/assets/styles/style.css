@@ -1,13 +1,25 @@
 /* root colors */:root {
 	--color-primary: #0f94cf;
+	--color-primary5: #156080;
 	--color-primary2: #2a70c0;
 	--color-primary3: rgb(46, 86, 160);
 	--color-primary4: rgba(19, 28, 44, 0.5);
 	--color-dark: #16242b;
 	--color-lightgrey: rgb(211, 211, 211);
+	--color-grey: rgb(80, 80, 80);
 	--color-white: #ffffff;
+	--white: #FFFFFF;
+	--background-primary: #e2ebf6;
+	--background-primary-2: #dee8f5;
 	--primary-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	--title-font: "Klarheit Kurrent";
+	--primary-light: #8abdff;
+	--primary: #6d5dfc;
+	--primary-dark: #5b0eeb;
+	--greyLight-1: #E4EBF5;
+	--greyLight-2: #c8d0e7;
+	--greyLight-3: #bec8e4;
+	--greyDark: #9baacf;
 }
 .pinscroll {
 	transform: translate3d(0px, 0px, 0px)!important;
@@ -201,4 +213,173 @@ section.horizontal .animation-wrap .item:nth-child(4n + 4) {
 	margin: 0px;
 	margin-bottom: 4em;
 	font-size: 11px;
+}
+.neomorphic {
+	border-radius: 1rem;
+	background: var(--color);
+	animation: 1s -0.3s 1 paused opacify;
+	backdrop-filter: blur(0.5rem);
+	border: 1px solid rgba(255, 255, 255, .2);
+	box-shadow: -0.25rem -0.25rem 0.5rem rgba(255, 255, 255, .07), 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, .12), -0.75rem -0.75rem 1.75rem rgba(255, 255, 255, .07), 0.75rem 0.75rem 1.75rem rgba(0, 0, 0, .12), inset 8rem 8rem 8rem rgba(0, 0, 0, .05), inset -8rem -8rem 8rem rgba(255, 255, 255, .05);
+}
+
+.callContainter {
+	position: fixed;
+	bottom: 10px;
+	right: 20px;
+	width: 70px;
+	height: 70px;
+	background: var(--background-primary);
+	box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 0;
+}
+.mailContainter {
+	position: fixed;
+	bottom: 10px;
+	right: 120px;
+	width: 70px;
+	height: 70px;
+	background: var(--background-primary);
+	box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 0;
+}
+
+.mailContainer:hover {
+	box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+	transition: all 0.5s ease-in-out;
+}
+.callContainer:hover {
+	box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+	transition: all 0.5s ease-in-out;
+}
+
+.trin-phone:hover {
+	animation-name: trin-phone;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	background-image: url(../../assets/images/phone.png);
+
+}
+
+.trin-mail:hover {
+	animation-name: trin-mail;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	background-image: url(../../assets/images/phone.png);
+
+}
+
+.icon-phone {
+	background-image: url(../../assets/images/phone.png);
+	
+	/* background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAC1klEQVRoQ+2Z21XbQBCG/7ULCKkgTgUxFcR0YCrAl7wHKvBQQeA9Fu4AqCCkgogKcCqIU4C1OaONOLYl7e5IstY+B73wwMwy385l/10UjvxTRx4/3gBCZ7A8AyPqQ3XeOQPUyTMWtHLa7ckgD8CBd3APhZ7n34wxp1NP28bN8gATehEEbwJSOMN3emo8Oo8F8wBT0h5+2yYHBsD17K79TQSNK0R0IwZvwKGohJ6g8Fm2tn7E/Hoo82nGuqiEFgAuRMtrrBDRe5FPQ8ZFGSAozMTrr3GKBcViv5oOeYAvNIDGD/G6gfqg6Bw4QRd/KgAsEdFHsV9Nh+KTeEIxFD6J1w5QRsUA09kNoL6KAQKcByUAxCPxXgjwG2v029ZF5WJumgo03wPtL9YYHMYUyrZ9Sr7nQbDgjQwr+1iVdvHLWUYB6n4zJvuNbEJ2WaExRpRmKthnB5hamznoPSDbMfed2H4mnGNOD8G239oDWVQ2acEiLkk10DIUhDsDHJm9F2Kscdb2/PcvIbYcUQ9dvJTussYCEY1DZMEvAyYLl1D4ZoEIcivzB3CXEhBgrMoATCnxpaVcYrQMIQPgLNjPBlNhWhGi2bWzJ0bEd487aAwAPCDBrVRPyQFMKY2gcGcNkBs7wVXpdDLB882vv7UOj2aFGFqxClghUTEsr3/VAEwmfMQej9hxblfLgrftiMYSCc5316oO4A+xXVJVgn8Fyz/f1AMQQWAJpQjQl7mycTbLfwONn4iI++X1qw9geqLaU4xv4Jnd3gB8G1sa8K79XgGM5OBLEKvTD3VjLfTfO4CBOEFXU6VXDRd1KwBZEEaG86htLhutAmQgRgSS4IWjPA9BALKy6oBBeIT6PtXkQYIBbIbCMgQpjPzp8iAAMhhWth3wC+DQ+x8qBS/gzRxkrunh83tu+gR9KPSh0Ut/bpabxjMSDHfv34cD4ANZYPMGUHHjGnM7+gz8A29K+DHRISQ9AAAAAElFTkSuQmCC"); */
+	background-repeat: no-repeat;
+	background-size: 30px;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+}
+.icon-mail {
+	background-image: url(../../assets/images/mail.png);
+	
+	/* background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAC1klEQVRoQ+2Z21XbQBCG/7ULCKkgTgUxFcR0YCrAl7wHKvBQQeA9Fu4AqCCkgogKcCqIU4C1OaONOLYl7e5IstY+B73wwMwy385l/10UjvxTRx4/3gBCZ7A8AyPqQ3XeOQPUyTMWtHLa7ckgD8CBd3APhZ7n34wxp1NP28bN8gATehEEbwJSOMN3emo8Oo8F8wBT0h5+2yYHBsD17K79TQSNK0R0IwZvwKGohJ6g8Fm2tn7E/Hoo82nGuqiEFgAuRMtrrBDRe5FPQ8ZFGSAozMTrr3GKBcViv5oOeYAvNIDGD/G6gfqg6Bw4QRd/KgAsEdFHsV9Nh+KTeEIxFD6J1w5QRsUA09kNoL6KAQKcByUAxCPxXgjwG2v029ZF5WJumgo03wPtL9YYHMYUyrZ9Sr7nQbDgjQwr+1iVdvHLWUYB6n4zJvuNbEJ2WaExRpRmKthnB5hamznoPSDbMfed2H4mnGNOD8G239oDWVQ2acEiLkk10DIUhDsDHJm9F2Kscdb2/PcvIbYcUQ9dvJTussYCEY1DZMEvAyYLl1D4ZoEIcivzB3CXEhBgrMoATCnxpaVcYrQMIQPgLNjPBlNhWhGi2bWzJ0bEd487aAwAPCDBrVRPyQFMKY2gcGcNkBs7wVXpdDLB882vv7UOj2aFGFqxClghUTEsr3/VAEwmfMQej9hxblfLgrftiMYSCc5316oO4A+xXVJVgn8Fyz/f1AMQQWAJpQjQl7mycTbLfwONn4iI++X1qw9geqLaU4xv4Jnd3gB8G1sa8K79XgGM5OBLEKvTD3VjLfTfO4CBOEFXU6VXDRd1KwBZEEaG86htLhutAmQgRgSS4IWjPA9BALKy6oBBeIT6PtXkQYIBbIbCMgQpjPzp8iAAMhhWth3wC+DQ+x8qBS/gzRxkrunh83tu+gR9KPSh0Ut/bpabxjMSDHfv34cD4ANZYPMGUHHjGnM7+gz8A29K+DHRISQ9AAAAAElFTkSuQmCC"); */
+	background-repeat: no-repeat;
+	background-size: 30px;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+}
+
+@keyframes trin-phone {
+	from {
+		transform: rotate3d(0, 0, 1, 0deg);
+		background-image: url(../../assets/images/phone.png);
+	}
+	20%,
+	32%,
+	44%,
+	56%,
+	68% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+	23%,
+	35%,
+	47%,
+	59%,
+	71% {
+		transform: rotate3d(0, 0, 1, 15deg);
+	}
+	26%,
+	38%,
+	50%,
+	62%,
+	74% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+	29%,
+	41%,
+	53%,
+	65%,
+	77% {
+		transform: rotate3d(0, 0, 1, -15deg);
+		background-image: url(../../assets/images/phone.png);
+
+	}
+	80% {
+		transform: rotate3d(0, 0, 1, 0deg);
+		background-image: url(../../assets/images/phone.png);
+
+	}
+}
+
+@keyframes trin-mail {
+	from {
+		transform: rotate3d(0, 0, 1, 0deg);
+		background-image: url(../../assets/images/mail.png);
+	}
+	20%,
+	32%,
+	44%,
+	56%,
+	68% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+	23%,
+	35%,
+	47%,
+	59%,
+	71% {
+		transform: rotate3d(0, 0, 1, 15deg);
+	}
+	26%,
+	38%,
+	50%,
+	62%,
+	74% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+	29%,
+	41%,
+	53%,
+	65%,
+	77% {
+		transform: rotate3d(0, 0, 1, -15deg);
+		background-image: url(../../assets/images/mail.png);
+
+	}
+	80% {
+		transform: rotate3d(0, 0, 1, 0deg);
+		background-image: url(../../assets/images/mail.png);
+
+	}
 }

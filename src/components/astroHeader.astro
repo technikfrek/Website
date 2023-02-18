@@ -5,7 +5,7 @@ export interface Props {
 	image: string;
 }
 
-const { title, subtitle, image } = Astro.props;
+const {title, subtitle, image} = Astro.props;
 ---
 
 <div class="headerContainer">
@@ -14,9 +14,32 @@ const { title, subtitle, image } = Astro.props;
 		<p>{subtitle}</p>
 	</div>
 	<div class="headerImage">
-		<img src={image} />
+		<canvas id="headerCanvas"></canvas>
 	</div>
 </div>
+<script>
+	import {Application} from "@splinetool/runtime";
+	import gsap from "gsap";
+
+	const canvas: any = document.getElementById("headerCanvas");
+	const app = new Application(canvas);
+	app.load("https://prod.spline.design/4-UzVbzMpUZ7aLxY/scene.splinecode");
+
+	const tl = gsap.timeline();
+	tl.fromTo(".header", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"}, "-=0.5")
+	tl.fromTo(".headerImage", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
+	tl.fromTo(".header h1", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
+	tl.fromTo(".header p", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
+
+	document.addEventListener("DOMContentLoaded", function (event) {
+		async function sleep(ms) {
+			return new Promise((resolve) => setTimeout(resolve, ms));
+		}
+		sleep(5000).then(() => {
+			tl.play();
+		});
+	});
+</script>
 <style>
 	.headerContainer {
 		display: flex;
@@ -24,17 +47,20 @@ const { title, subtitle, image } = Astro.props;
 		justify-content: space-between;
 		align-items: center;
 		min-height: 100vh;
+		background-color: var(--background-primary);
 	}
 	.header {
 		width: 50%;
+		padding: 0 2rem;
 	}
-	.header h1{
+	.header h1 {
 		font-size: 7rem;
 	}
 	.headerImage {
-		width: 50%;
-	}
-	.headerImage img {
 		width: 100%;
+	}
+	.headerImage canvas {
+		height: 800px !important;
+		width: 1000px !important;
 	}
 </style>

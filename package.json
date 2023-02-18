@@ -12,10 +12,14 @@
   },
   "dependencies": {
     "@astrojs/node": "^5.0.3",
+    "@splinetool/loader": "^0.9.218",
+    "@splinetool/runtime": "^0.9.218",
     "@studio-freight/lenis": "^0.2.28",
     "astro": "^2.0.11",
+    "flickity": "^3.0.0",
     "gsap": "^3.11.4",
     "scrolltrigger": "^1.0.1",
-    "splitting": "^1.0.6"
+    "splitting": "^1.0.6",
+    "three.js": "^0.77.1"
   }
 }
