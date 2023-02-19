@@ -5,22 +5,25 @@ export interface Props {
 	position: string;
 	description: string;
 	image: string;
+	signature: string;
 	ID: string;
+
 }
 
-const {title, name, position, description, image, ID} = Astro.props;
+const {title, name, position, description, image, signature, ID} = Astro.props;
 ---
 
 <section class="AboutSection" id={ID}>
 	<div class="aboutWrapper">
-		<div class="aboutContainer">
+		<div class="aboutContainer imageContainer">
 			<img src={image} alt="image" />
 		</div>
 		<div class="aboutContainer">
-			<h2>{title}</h2>
+			<!-- <h2>{title}</h2> -->
 			<h3>{name}</h3>
 			<h4>{position}</h4>
 			<p>{description}</p>
+			<img class="signature" src={signature} />
 		</div>
 	</div>
 	<div class="blob1 blur"></div>
@@ -29,6 +32,28 @@ const {title, name, position, description, image, ID} = Astro.props;
 	<div class="blob4 blur"></div>
 </section>
 <style>
+	.signature {
+		height: 60px;
+		margin-top: 10px;
+	}
+	.imageContainer {
+		position: relative;
+		left: -50px;
+	}
+	.imageContainer img{
+		/* padding: 50px 50px 50px 50px; */
+		/* margin-right: 200px; */
+		width: 450px;
+		object-fit: cover;
+		-webkit-filter: drop-shadow(0.3rem 0.3rem 0.6rem var(--greyLight-2));
+		filter: drop-shadow(0.3rem 0.3rem 0.6rem var(--greyLight-2));
+	}
+	.mask1 {
+		-webkit-mask-image: url(./assets/images/mask1.svg);
+		-webkit-mask-repeat: no-repeat;
+		mask-image: url(./assets/images/mask1.svg);
+		mask-repeat: no-repeat;
+	}
 	.blob1 {
 		position: absolute;
 		top: 30vh;
@@ -65,21 +90,34 @@ const {title, name, position, description, image, ID} = Astro.props;
 		background-color: rgba(233, 53, 53, 0.781);
 		z-index: 100;
 	}
+	h3 {
+		font-size: 4rem;
+		margin-bottom: 5px!important;
+	}
+	h4 {
+		font-size: 1.3rem;
+		margin-top: 0!important;
+	}
 	.AboutSection {
 		height: 100vh;
 		width: 100%;
-
+		background-color: var(--background-primary);
 	}
 	.aboutWrapper {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		padding: 0 10%;
+		height: 100%;
 	}
 	.aboutContainer {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
+		width: 50%;
 	}
+	.aboutContainer p{
+		padding-left: 0!important;
+		font-size: 1.1rem;
+		line-height: 1.7rem;
+	}
+
 </style>

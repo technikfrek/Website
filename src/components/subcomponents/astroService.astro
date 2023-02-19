@@ -12,11 +12,11 @@ export interface Props {
 
 const {title, subtitle, shorttext, image, popup, popupID, providerNames, providerLinks, providerImages} = Astro.props;
 ---
-<div class="neomorphic card scrollAnimateTop">
+<div class="neomorphic card ">
 	<h2 class="pl">{ title }</h2>
 	<p class="pl">{subtitle}</p>
 </div>
-<div class="Service m-calc scrollAnimateBottom">
+<div class="Service m-calc horizontal-item">
 	<a href={"#" + popupID}>
 		<!-- <div class="top-bar"></div> -->
 		<div class="header">
@@ -46,6 +46,9 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 	</div>
 </div>
 <style>
+	
+
+
 	h2,
 	p {
 		color: var(--color-dark);
@@ -53,22 +56,7 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 	.header {
 		margin-top: 40px;
 	}
-	.card {
-		height: 120px;
-		width: 800px;
-		position: relative;
-		top: 170px;
-		left: 570px;
-		margin-left: -300px;
-		z-index: 5;
-	}
-	.card p {
-		font-size: 1.3rem;
-		margin-top: 10px;
-		margin-left: 10px;
-		padding: 0 0 0 10px!important;
-		font-weight: 200;
-	}
+	
 	.Service {
 		padding: 30px;
 		display: flex;
