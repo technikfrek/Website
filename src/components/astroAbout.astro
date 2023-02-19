@@ -1,0 +1,85 @@
+---
+export interface Props {
+	title: string;
+	name: string;
+	position: string;
+	description: string;
+	image: string;
+	ID: string;
+}
+
+const {title, name, position, description, image, ID} = Astro.props;
+---
+
+<section class="AboutSection" id={ID}>
+	<div class="aboutWrapper">
+		<div class="aboutContainer">
+			<img src={image} alt="image" />
+		</div>
+		<div class="aboutContainer">
+			<h2>{title}</h2>
+			<h3>{name}</h3>
+			<h4>{position}</h4>
+			<p>{description}</p>
+		</div>
+	</div>
+	<div class="blob1 blur"></div>
+	<div class="blob2 blur"></div>
+	<div class="blob3 blur"></div>
+	<div class="blob4 blur"></div>
+</section>
+<style>
+	.blob1 {
+		position: absolute;
+		top: 30vh;
+		left: -100px;
+		width: 250px;
+		height: 150px;
+		background-color: rgb(255, 0, 0);
+		z-index: 100;
+	}
+	.blob2 {
+		position: absolute;
+		top: -20vh;
+		left: 2500px;
+		width: 300px;
+		height: 190px;
+		background-color: rgb(255, 196, 0);
+		z-index: 100;
+	}
+	.blob3 {
+		position: absolute;
+		top: 80vh;
+		left: 1500px;
+		width: 300px;
+		height: 180px;
+		background-color: rgb(30, 214, 30);
+		z-index: 100;
+	}
+	.blob4 {
+		position: absolute;
+		top: 30vh;
+		left: 3500px;
+		width: 300px;
+		height: 150px;
+		background-color: rgba(233, 53, 53, 0.781);
+		z-index: 100;
+	}
+	.AboutSection {
+		height: 100vh;
+		width: 100%;
+
+	}
+	.aboutWrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.aboutContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+</style>

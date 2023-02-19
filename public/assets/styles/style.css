@@ -29,6 +29,15 @@
 .pinscroll {
 	transform: translate3d(0px, 0px, 0px) !important;
 }
+body.smooth-scroll {
+	overflow-y: hidden !important;
+  }
+  body.smooth-scroll #scroll-container {
+	width: auto;
+	height: 100vh;
+	overflow: auto;
+	margin: 0;
+  }
 html,
 body,
 section.horizontal {
@@ -260,6 +269,19 @@ section.horizontal .animation-wrap .item:nth-child(4n + 4) {
 	justify-content: center;
 	align-items: center;
 	z-index: 0;
+}
+
+.neuOutside {
+	box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+}
+.neuOutside:hover {
+	box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+.neuInside {
+	box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+.neuInside:hover {
+	box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
 }
 
 .mailContainer:hover {
