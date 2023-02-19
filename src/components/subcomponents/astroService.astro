@@ -2,6 +2,7 @@
 export interface Props {
 	title: string;
 	subtitle: string;
+	shorttext: string;
 	popup: boolean;
 	popupID: string;
 	providerNames: Array<string>;
@@ -9,17 +10,18 @@ export interface Props {
 	providerImages: Array<string>;
 }
 
-const {title, subtitle, image, popup, popupID, providerNames, providerLinks, providerImages} = Astro.props;
+const {title, subtitle, shorttext, image, popup, popupID, providerNames, providerLinks, providerImages} = Astro.props;
 ---
-<div class="neomorphic card">
+<div class="neomorphic card scrollAnimateTop">
 	<h2 class="pl">{ title }</h2>
+	<p class="pl">{subtitle}</p>
 </div>
-<div class="Service m-calc">
+<div class="Service m-calc scrollAnimateBottom">
 	<a href={"#" + popupID}>
 		<!-- <div class="top-bar"></div> -->
 		<div class="header">
 			<!-- <h3 class="pl">{title}</h3> -->
-			<p class="pl">{subtitle}</p>
+			<p class="pl">{shorttext}</p>
 		</div>
 		<div class="pl headerImage">
 			<img src={image} />
@@ -44,7 +46,7 @@ const {title, subtitle, image, popup, popupID, providerNames, providerLinks, pro
 	</div>
 </div>
 <style>
-	h3,
+	h2,
 	p {
 		color: var(--color-dark);
 	}
@@ -59,6 +61,13 @@ const {title, subtitle, image, popup, popupID, providerNames, providerLinks, pro
 		left: 570px;
 		margin-left: -300px;
 		z-index: 5;
+	}
+	.card p {
+		font-size: 1.3rem;
+		margin-top: 10px;
+		margin-left: 10px;
+		padding: 0 0 0 10px!important;
+		font-weight: 200;
 	}
 	.Service {
 		padding: 30px;

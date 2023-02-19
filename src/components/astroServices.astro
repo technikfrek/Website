@@ -12,19 +12,142 @@ const {title, subtitle, ID} = Astro.props;
 <section class="horizontal" id={ID}>
 	<div class="pin-wrap" id="pinThis-0">
 		<div class="animation-wrap to-right" id="animateThis-0">
-			<Service title="Zertifizierte Datenlöschung" subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ." popup={true} popupID="popup-0" providerNames={["Bitwarden", "AVM", "Nextcloud"]} providerLinks={["https://bitwarden.com/de-DE/", "https://avm.de/", "https://nextcloud.com/de/"]} providerImages={["https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/AVM-Logo.png/800px-AVM-Logo.png", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/141px-Nextcloud_Logo.svg.png"]} />
-			<Service title="Lösung für Sicherheitssoftware" subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ." popup={false} popupID="popup-" providerNames={["MDM", "Bitwarden", "AVM", "Nextcloud"]} providerLinks={["a", "b", "c", "d"]} providerImages={["a", "b", "c", "d"]} />
-			<Service title="title2" subtitle="subtitle" popup={true} popupID="popup-" providerNames={["a", "b", "c", "d"]} providerLinks={["a", "b", "c", "d"]} providerImages={["a", "b", "c", "d"]} />
-			<Service title="title3" subtitle="subtitle" popup={true} popupID="popup-" providerNames={["a", "b", "c", "d"]} providerLinks={["a", "b", "c", "d"]} providerImages={["a", "b", "c", "d"]} />
-			<Service title="title4" subtitle="subtitle" popup={true} popupID="popup-" providerNames={["a", "b", "c", "d"]} providerLinks={["a", "b", "c", "d"]} providerImages={["a", "b", "c", "d"]} />
-			<Service title="title5" subtitle="subtitle" popup={true} popupID="popup-" providerNames={["a", "b", "c", "d"]} providerLinks={["a", "b", "c", "d"]} providerImages={["a", "b", "c", "d"]} />
-			<Service title="title6" subtitle="subtitle" popup={true} popupID="popup-" providerNames={["a", "b", "c", "d"]} providerLinks={["a", "b", "c", "d"]} providerImages={["a", "b", "c", "d"]} />
-			<Service title="title7" subtitle="subtitle" popup={true} popupID="popup-" providerNames={["a", "b", "c", "d"]} providerLinks={["a", "b", "c", "d"]} providerImages={["a", "b", "c", "d"]} />
+			<Service
+				title="Zertifizierte Datenlöschung"
+				subtitle="Lorem ipsum dolor sit amet."
+				shorttext="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. "
+				popup={true}
+				popupID="popup-0"
+				providerNames={["Bitwarden", "AVM", "Nextcloud"]}
+				providerLinks={[
+					"https://bitwarden.com/de-DE/",
+					"https://avm.de/",
+					"https://nextcloud.com/de/",
+				]}
+				providerImages={[
+					"https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png",
+					"https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/AVM-Logo.png/800px-AVM-Logo.png",
+					"https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/141px-Nextcloud_Logo.svg.png",
+				]}
+			/>
+			<Service
+				title="Lösung für Sicherheitssoftware"
+				subtitle="Lorem ipsum dolor sit amet."
+				shorttext="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. "
+				popup={false}
+				popupID="popup-"
+				providerNames={["MDM", "Bitwarden", "AVM", "Nextcloud"]}
+				providerLinks={["a", "b", "c", "d"]}
+				providerImages={["a", "b", "c", "d"]}
+			/>
+			<Service
+				title="title2"
+				subtitle="subtitle"
+				shorttext="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. "
+				popup={true}
+				popupID="popup-"
+				providerNames={["a", "b", "c", "d"]}
+				providerLinks={["a", "b", "c", "d"]}
+				providerImages={["a", "b", "c", "d"]}
+			/>
+			<Service
+				title="title3"
+				subtitle="subtitle"
+				shorttext="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. "
+				popup={true}
+				popupID="popup-"
+				providerNames={["a", "b", "c", "d"]}
+				providerLinks={["a", "b", "c", "d"]}
+				providerImages={["a", "b", "c", "d"]}
+			/>
+			<Service
+				title="title4"
+				subtitle="subtitle"
+				shorttext="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. "
+				popup={true}
+				popupID="popup-"
+				providerNames={["a", "b", "c", "d"]}
+				providerLinks={["a", "b", "c", "d"]}
+				providerImages={["a", "b", "c", "d"]}
+			/>
+			<Service
+				title="title5"
+				subtitle="subtitle"
+				shorttext="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. "
+				popup={true}
+				popupID="popup-"
+				providerNames={["a", "b", "c", "d"]}
+				providerLinks={["a", "b", "c", "d"]}
+				providerImages={["a", "b", "c", "d"]}
+			/>
+			<Service
+				title="title6"
+				subtitle="subtitle"
+				shorttext="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. "
+				popup={true}
+				popupID="popup-"
+				providerNames={["a", "b", "c", "d"]}
+				providerLinks={["a", "b", "c", "d"]}
+				providerImages={["a", "b", "c", "d"]}
+			/>
+			<Service
+				title="title7"
+				subtitle="subtitle"
+				shorttext="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. "
+				popup={true}
+				popupID="popup-"
+				providerNames={["a", "b", "c", "d"]}
+				providerLinks={["a", "b", "c", "d"]}
+				providerImages={["a", "b", "c", "d"]}
+			/>
+			<div class="blob1 blur"></div>
+			<div class="blob2 blur"></div>
+			<div class="blob3 blur"></div>
+			<div class="blob4 blur"></div>
+			<div class="blob5 blur"></div>
+			<div class="blob6 blur"></div>
+			<div class="blob7 blur"></div>
+			<div class="blob8 blur"></div>
 		</div>
 	</div>
 </section>
 <style>
-
+	.blob1 {
+		position: absolute;
+		top: 30vh;
+		left: -100px;
+		width: 250px;
+		height: 150px;
+		background-color: rgb(255, 0, 0);
+		z-index: 100;
+	}
+	.blob2 {
+		position: absolute;
+		top: -20vh;
+		left: 2500px;
+		width: 300px;
+		height: 190px;
+		background-color: rgb(255, 196, 0);
+		z-index: 100;
+	}
+	.blob3 {
+		position: absolute;
+		top: 80vh;
+		left: 1500px;
+		width: 300px;
+		height: 180px;
+		background-color: rgb(30, 214, 30);
+		z-index: 100;
+	}
+	.blob4 {
+		position: absolute;
+		top: 30vh;
+		left: 3500px;
+		width: 300px;
+		height: 150px;
+		background-color: rgba(233, 53, 53, 0.781);
+		z-index: 100;
+	}
 	.servicesContainer {
 		display: flex;
 		flex-direction: column;
@@ -35,7 +158,7 @@ const {title, subtitle, ID} = Astro.props;
 	}
 	section.horizontal {
 		background-color: var(--background-primary);
-		box-shadow: inset 0.5rem 0.7rem 4rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
-		
+		box-shadow: inset 0.5rem 0.7rem 4rem var(--greyLight-2),
+			inset -0.2rem -0.2rem 0.5rem var(--white);
 	}
 </style>

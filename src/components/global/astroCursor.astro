@@ -1,14 +1,14 @@
 ---
 ---
 
-<!-- Magic Cursor -->
-<script is:inline src="./assets/scripts/cursor.js"></script>
+<!-- Magic Cursor --><!-- <script is:inline src="./assets/scripts/cursor.js"></script> -->
 <script>
+	import magicMouse from "magicmouse.js";
 	let options = {
-		outerStyle: "circle-basic",
-		hoverEffect: "circle-move",
-		hoverItemMove: true,
-		defaultCursor: true,
+		outerStyle: "disable",
+		hoverEffect: "pointer-overlay",
+		hoverItemMove: false,
+		defaultCursor: false,
 		outerWidth: 41,
 		outerHeight: 41,
 	};

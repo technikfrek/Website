@@ -17,6 +17,10 @@ const {title, subtitle, image} = Astro.props;
 		<canvas id="headerCanvas"></canvas>
 	</div>
 </div>
+<div class="blob1 blur"></div>
+<div class="blob2 blur"></div>
+<div class="blob3 blur"></div>
+<!-- <div class="blob4 blur"></div> -->
 <script>
 	import {Application} from "@splinetool/runtime";
 	import gsap from "gsap";
@@ -41,6 +45,42 @@ const {title, subtitle, image} = Astro.props;
 	});
 </script>
 <style>
+	.blob1 {
+		position: absolute;
+		top: 30vh;
+		left: -10vw;
+		width: 250px;
+		height: 150px;
+		background-color: rgb(255, 0, 0);
+		z-index: 100;
+	}
+	.blob2 {
+		position: absolute;
+		top: 70vh;
+		right: 10vw;
+		width: 300px;
+		height: 190px;
+		background-color: rgb(25, 0, 255);
+		z-index: 100;
+	}
+	.blob3 {
+		position: absolute;
+		top: 80vh;
+		left: 20vw;
+		width: 300px;
+		height: 180px;
+		background-color: rgb(30, 214, 30);
+		z-index: 100;
+	}
+	.blob4 {
+		position: absolute;
+		top: 130vh;
+		left: 40vw;
+		width: 300px;
+		height: 150px;
+		background-color: rgba(233, 53, 53, 0.781);
+		z-index: 100;
+	}
 	.headerContainer {
 		display: flex;
 		flex-direction: row;
@@ -48,6 +88,7 @@ const {title, subtitle, image} = Astro.props;
 		align-items: center;
 		min-height: 100vh;
 		background-color: var(--background-primary);
+		overflow: visible!important;;
 	}
 	.header {
 		width: 50%;
