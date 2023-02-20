@@ -1,23 +1,24 @@
 ---
 ---
 
-<!-- <div id="preloader" class="preloader-container">
+<div id="preloader" class="preloader-container">
 	<div id="preloader-ring" class="loader-ring">
 		<div class="loader-ring-light"></div>
 		<div class="loader-ring-track"></div>
 	</div>
-</div> -->
-<!-- <script>
+</div>
+<script>
 	document.addEventListener("DOMContentLoaded", function (event) {
 		var x = document.getElementById("preloader");
 		var y = document.getElementById("preloader-ring");
-		var z = document.querySelector("#main-scrollbar > div.scroll-content");
+		var z = document.querySelector("#scroll-container");
 		z.classList.add("pinscroll");
 		console.log("Page is loaded");
 		async function sleep(ms) {
 			return new Promise((resolve) => setTimeout(resolve, ms));
 		}
-		sleep(2).then(() => {
+		sleep(1000).then(() => {
+			z.classList.remove("pinscroll");
 			x.classList.add("visuallyhidden1");
 			x.addEventListener("transitionend", function () {
 				x.classList.add("hidden");
@@ -26,10 +27,9 @@
 			y.addEventListener("transitionend", function () {
 				x.classList.add("hidden");
 			});
-			z.classList.remove("pinscroll");
 		});
 	}); 
-</script>-->
+</script>
 
 <style>
 	:root {

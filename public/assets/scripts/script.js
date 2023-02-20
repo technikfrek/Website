@@ -1,4 +1,5 @@
 // =======================// Begin Smooth Scrollbar// =======================
+
 if ($("body").hasClass("smooth-scroll")) {
 	// Init Smooth Scrollbar
 	// ======================
@@ -126,29 +127,40 @@ for (let i = 0; i < popupCloseButtons.length; i++) {
 	});
 }
 
+
+// function smoothScrollTo(target, duration) {
+// 	var target = document.querySelector(target);
+// 	var targetPosition = target.getBoundingClientRect().top;
+// 	var startPosition = window.pageYOffset;
+// 	var distance = targetPosition - startPosition;
+// 	var startTime = null;
+// 	console.log(targetPosition);
+// 	bodyScrollBar.scrollTo(targetPosition, 0, duration);
+// }
+// smoothScrollTo("#Dienstleistungen", 1000);
 // =======================
 
 function wait(ms = 0) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-wait(1000).then(() => {
-	console.clear();
-	console.log(
-		"%c Made by Moritz Pfeffer Mediadesign",
-		"font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #fff; background: #000; padding: 1rem; border-radius: 1rem; margin-top: 1rem;"
-	);
-	console.log(
-		"%c Technologies used: \njQuery - because it saves time \nGSAP - because ❤ \nScrollTrigger - for scroll-based animations \nSmooth-Scrollbar - for smooth scrolling \nWebGL(THREE.js) - for 3d glass spheres\nSpline - a 3d WebGL Editor",
-		"font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #fff; background: #000; padding: 1rem; border-radius: 1rem; margin-top: 1rem;"
-	);
-	console.log(
-		"%c Built using Astro.build, a static site generator for the modern web.",
-		"font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #fff; background: #000; padding: 1rem; border-radius: 1rem; margin-top: 1rem;"
-	);
-	console.warn(
-		"%c Like my work? Feel free to contact me via email: \ninfo@moritzpfeffermedia.de",
-		"font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #fff; background: #000; padding: 1rem; border-radius: 1rem; margin-top: 1rem;"
-	);
+// wait(1000).then(() => {
+// 	console.clear();
+// 	console.log(
+// 		"%c Made by Moritz Pfeffer Mediadesign",
+// 		"font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #fff; background: #000; padding: 1rem; border-radius: 1rem; margin-top: 1rem;"
+// 	);
+// 	console.log(
+// 		"%c Technologies used: \njQuery - because it saves time \nGSAP - because ❤ \nScrollTrigger - for scroll-based animations \nSmooth-Scrollbar - for smooth scrolling \nWebGL(THREE.js) - for 3d glass spheres\nSpline - a 3d WebGL Editor",
+// 		"font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #fff; background: #000; padding: 1rem; border-radius: 1rem; margin-top: 1rem;"
+// 	);
+// 	console.log(
+// 		"%c Built using Astro.build, a static site generator for the modern web.",
+// 		"font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #fff; background: #000; padding: 1rem; border-radius: 1rem; margin-top: 1rem;"
+// 	);
+// 	console.warn(
+// 		"%c Like my work? Feel free to contact me via email: \ninfo@moritzpfeffermedia.de",
+// 		"font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #fff; background: #000; padding: 1rem; border-radius: 1rem; margin-top: 1rem;"
+// 	);
 
-});
+// });

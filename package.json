@@ -11,11 +11,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/deno": "^4.0.2",
     "@astrojs/node": "^5.0.3",
     "@splinetool/loader": "^0.9.218",
     "@splinetool/runtime": "^0.9.218",
     "@studio-freight/lenis": "^0.2.28",
-    "astro": "^2.0.11",
+    "astro": "^2.0.14",
+    "deno": "^0.1.1",
     "flickity": "^3.0.0",
     "gsap": "^3.11.4",
     "magicmouse.js": "^1.2.1",
