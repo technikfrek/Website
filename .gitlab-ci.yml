@@ -1,0 +1,35 @@
+image: node:16
+
+before_script:
+ - apt-get update
+ - apt-get install lftp
+ - apt-get update -qq && apt-get install -y -qq sshpass
+ - npm i astro -g
+
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - npm i
+    - npm run build
+    - echo "Compile complete."
+  artifacts:
+    paths:
+    - dist/
+
+deploy-job:
+  only:
+    - release
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+    - sshpass -V
+    - export SSHPASS=$FTP_PASSWORD
+    - sshpass -e ssh -o StrictHostKeyChecking=no nabu@root.moritzpfeffermedia.de "./stop.sh ; (rm -r -f /home/nabu/code/*)"
+    - sshpass -e scp -o stricthostkeychecking=no -r dist/* nabu@root.moritzpfeffermedia.de:/home/nabu/code
+    - sshpass -e ssh -o StrictHostKeyChecking=no nabu@root.moritzpfeffermedia.de "./start.sh"
+    - echo "Application successfully deployed."
