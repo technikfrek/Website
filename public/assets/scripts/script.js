@@ -1,5 +1,4 @@
-// =======================// Begin Smooth Scrollbar
-// =======================
+// =======================// Begin Smooth Scrollbar// =======================
 
 if ($("body").hasClass("smooth-scroll")) {
 	// Init Smooth Scrollbar
@@ -89,7 +88,7 @@ horizontalSections.forEach(function (sec, i) {
 			start: "0% 50%",
 			end: "100% 50%",
 			toggleClass: {targets: sct, className: "active"},
-			markers: true,
+			// markers: true,
 		});
 	});
 	cards.forEach((sct, i) => {
@@ -99,7 +98,34 @@ horizontalSections.forEach(function (sec, i) {
 			start: "0% 50%",
 			end: "100% 50%",
 			toggleClass: {targets: sct, className: "active"},
-			markers: true,
+			// markers: true,
 		});
 	});
 });
+
+// =======================
+
+const popupButtons = document.querySelectorAll(".popupLink");
+for (let i = 0; i < popupButtons.length; i++) {
+	popupButtons[i].addEventListener("click", function (e) {
+		e.preventDefault();
+		const popupID = this.getAttribute("data-popup");
+		console.log(popupID);
+		const popup = document.querySelector(popupID);
+		console.log(popup);
+		popup.classList.add("active");
+	});
+}
+const popupCloseButtons = document.querySelectorAll(".popup__closer");
+for (let i = 0; i < popupCloseButtons.length; i++) {
+	popupCloseButtons[i].addEventListener("click", function (e) {
+		e.preventDefault();
+		const popupID = this.getAttribute("data-popup-close");
+		console.log(popupID);
+		const popup = document.querySelector(popupID);
+		console.log(popup);
+		popup.classList.remove("active");
+	});
+}
+
+

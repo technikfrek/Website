@@ -28,9 +28,9 @@ const {title} = Astro.props;
 			<slot />
 			<Footer client:idle />
 			<Global />
-			<Preloader client:load />
-			<Popups client:visible />
 		</div>
+		<Preloader client:load />
+		<Popups client:visible />
 	</body>
 	<script is:inline src="/assets/scripts/framework.js"></script>
 	<script is:inline src="/assets/scripts/script.js"></script>

@@ -10,14 +10,25 @@ export interface Props {
 	providerImages: Array<string>;
 }
 
-const {title, subtitle, shorttext, image, popup, popupID, providerNames, providerLinks, providerImages} = Astro.props;
+const {
+	title,
+	subtitle,
+	shorttext,
+	image,
+	popup,
+	popupID,
+	providerNames,
+	providerLinks,
+	providerImages,
+} = Astro.props;
 ---
-<div class="neomorphic card ">
-	<h2 class="pl">{ title }</h2>
+
+<div class="neomorphic card">
+	<h2 class="pl">{title}</h2>
 	<p class="pl">{subtitle}</p>
 </div>
 <div class="Service m-calc horizontal-item">
-	<a href={"#" + popupID}>
+	<a class="popupLink" data-popup={"#" + popupID} href={"#" + popupID}>
 		<!-- <div class="top-bar"></div> -->
 		<div class="header">
 			<!-- <h3 class="pl">{title}</h3> -->
@@ -26,7 +37,9 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 		<div class="pl headerImage">
 			<img src={image} />
 		</div>
-		<button class={"pl cbutton popup" + popup} role="button">Mehr Informationen</button>
+		<button class={"pl btn__primary popup" + popup} data-popup={"#" + popupID} role="button"
+			>Mehr Informationen</button
+		>
 	</a>
 	<div class="providers">
 		{
@@ -46,9 +59,6 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 	</div>
 </div>
 <style>
-	
-
-
 	h2,
 	p {
 		color: var(--color-dark);
@@ -56,7 +66,7 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 	.header {
 		margin-top: 40px;
 	}
-	
+
 	.Service {
 		padding: 30px;
 		display: flex;
@@ -83,19 +93,19 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 		/* text-align: center; */
 	}
 	.Service .header p {
-		padding-top: 0!important;
-		padding-bottom: 10px!important;
-		padding-right: 10px!important;
-
+		padding-top: 0 !important;
+		padding-bottom: 10px !important;
+		padding-right: 10px !important;
 	}
 	.Service:hover {
-		box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white)!important;
+		box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+			inset -0.2rem -0.2rem 0.5rem var(--white) !important;
 		transition: all 0.1s ease-in-out;
 		cursor: pointer;
 	}
 	.Service:hover .top-bar {
 		height: 30px;
-		margin-bottom: 27px!important;
+		margin-bottom: 27px !important;
 		transition: all 0.1s ease-in-out;
 	}
 	.m-calc {
@@ -107,11 +117,15 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 		width: 100%;
 		height: 20px;
 		background-color: var(--color-primary);
-		margin-bottom: 40px!important;
+		margin-bottom: 40px !important;
 		transition: all 0.1s ease-in-out;
 	}
 	.cbutton {
-		background-image: linear-gradient(92.88deg, var(--background-primary) 10%, var(--background-primary-2) 90%);
+		background-image: linear-gradient(
+			92.88deg,
+			var(--background-primary) 10%,
+			var(--background-primary-2) 90%
+		);
 		border-radius: 8px;
 		border-style: none;
 		box-sizing: border-box;
@@ -129,15 +143,14 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 		-webkit-user-select: none;
 		touch-action: manipulation;
 		margin-left: 10px;
-		box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
-		
+		box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+			inset -0.2rem -0.2rem 0.5rem var(--white);
 	}
-	
+
 	.cbutton:hover {
 		box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
 		transition-duration: 0.1s;
 		font-size: 16px;
-
 	}
 
 	.popuptrue {
@@ -191,5 +204,15 @@ const {title, subtitle, shorttext, image, popup, popupID, providerNames, provide
 	}
 	.pl {
 		padding-left: 10px;
+	}
+	.btn__primary {
+		grid-column: 0.5;
+		grid-row: 0.8;
+		background: var(--color-primary);
+		color: var(--greyLight-1);
+		border: none!important;
+		border-radius: 1rem;
+		padding: 0.5rem 1rem;
+		font-size: 1.2rem;
 	}
 </style>

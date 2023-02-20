@@ -32,8 +32,8 @@ const {title, subtitle, image} = Astro.props;
 	const tl = gsap.timeline();
 	tl.fromTo(".header", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"}, "-=0.5")
 	tl.fromTo(".headerImage", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
-	tl.fromTo(".header h1", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
-	tl.fromTo(".header p", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
+	tl.fromTo(".headerContainer h1", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
+	tl.fromTo(".headerContainer p", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
 
 	document.addEventListener("DOMContentLoaded", function (event) {
 		async function sleep(ms) {

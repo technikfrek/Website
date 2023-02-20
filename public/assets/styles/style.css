@@ -495,7 +495,7 @@ body .magic-hover:hover {
 	}
 }
 
-.horizontal-item {
+/* .horizontal-item {
 	opacity: .8;
 	transform: scale(.8);
 	transition: all .5s ease-in-out!important;
@@ -506,7 +506,7 @@ body .magic-hover:hover {
 	transform: scale(1);
 	transition: all .5s ease-in-out!important;
 
-}
+} */
 .card.active {
 	top: 170px;
 	transition: all .5s ease-in-out!important;
@@ -519,6 +519,8 @@ body .magic-hover:hover {
 	left: 570px;
 	margin-left: -300px;
 	z-index: 5;
+	transition: all .5s ease-in-out!important;
+
 }
 .card p {
 	font-size: 1.3rem;
