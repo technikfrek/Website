@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// fetch data from the API
+let regex: RegExp = /<body>([\s\S]*?)<\/footer>/gm;
+let source = await fetch("https://itrk.legal/ynp.8U.sRr.html")
+	.then((response) => response.text())
+	.then((text) => text.match(regex)[0])
+	.then((text) =>
+		text
+			.replace(/<body>/gm, "")
+			.replace(/<\/footer>/gm, "")
+			.replace(/<a href="https:\/\/itrk\.legal\/ynp\.2J\.sRr\.html\?imp=1"\>Impressum<\/a>/gm, "")
+	);
+---
+
+<Layout title="Datenschutz">
+	<div class="DatenschutzWrapper">
+		<div class="container" set:html={source} />
+	</div>
+</Layout>
+
+<style>
+	.DatenschutzWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 150px;
+		padding-bottom: 150px;
+	}
+	.DatenschutzWrapper > div {
+		width: 100%;
+		max-width: 90vw;
+	}
+	h1 {
+		font-size: 3em !important;
+    	padding-left: 0 !important;
+    	text-align: center;
+	}
+	p,
+	ul,
+	h2,
+	h3,
+	h4 {
+		margin-bottom: 1em;
+		font-size: 13px;
+		line-height: 1.4em;
+	}
+	h2,
+	h3,
+	h4 {
+		font-weight: bold;
+	}
+	h2 {
+		font-size: 110%;
+		margin-top: 1.5em;
+		margin-bottom: 0.5em;
+	}
+	ul,
+	ol {
+		margin-left: 0px;
+		list-style: square;
+	}
+	li {
+		margin-left: 1.3em;
+	}
+	a {
+		font-weight: inherit;
+		color: #1876d0;
+	}
+	a,
+	.header a {
+		font-weight: bold;
+		float: right;
+		/* margin-left: 2em; */
+		color: inherit;
+	}
+	.header {
+		clear: both;
+		padding-top: 0.7em;
+		color: var(--tertiary-color);
+		border-top: 1px solid #999;
+		margin: 0px;
+		margin-top: 4em;
+		font-size: 11px;
+	}
+	.header {
+		padding-bottom: 0.7em;
+		color: var(--tertiary-color);
+		border: 0px;
+		border-bottom: 1px solid #aaa;
+		margin: 0px;
+		margin-bottom: 4em;
+		font-size: 11px;
+	}
+</style>
