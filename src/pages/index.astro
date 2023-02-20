@@ -1,32 +1,37 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 // components
-import Header from '../components/astroHeader.astro';
-import About from '../components/astroAbout.astro';
-import Services from '../components/astroServices.astro';
-
+import Header from "../components/astroHeader.astro";
+import About from "../components/astroAbout.astro";
+import Services from "../components/astroServices.astro";
+import Portfolio from "../components/astroPortfolio.astro";
 ---
 
 <Layout title="Home">
-	<Header 
+	<Header
 		title="IT-Dienst vom Fach"
 		subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 		image="/assets/images/header.jpg"
-	 />
-	<About 
+	/>
+	<About
 		title="Über mich"
 		name="Torge Peterssen"
 		position="IT-Fachmann und Netzwerktechniker"
 		description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et"
 		image="/assets/images/torge.png"
 		signature="/assets/images/signature.png"
-		ID="Über"	
+		ID="Über"
 	/>
 	<Services
-	title="Services"
-	subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-	ID="Dienstleistungen"
+		title="Services"
+		subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+		ID="Dienstleistungen"
+	/>
+	<Portfolio
+		title="Portfolio"
+		subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+		ID="Portfolio"
 	/>
 </Layout>
 

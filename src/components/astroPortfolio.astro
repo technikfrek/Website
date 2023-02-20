@@ -1,0 +1,114 @@
+---
+import Card from "../components/subcomponents/astroCard.astro";
+export interface Props {
+	title: string;
+	subtitle: string;
+	ID: string;
+}
+
+const {title, subtitle, ID} = Astro.props;
+---
+
+<section class="portfolioSection" id={ID}>
+	<h2>Referenzen</h2>
+	<div class="portfolioWrapper">
+		<div class="container">
+			<Card title="Referenz 1" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry." image="" url="" popup="" popupID="" />
+			<Card title="Referenz 2" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry." image="" url="" popup="" popupID="" />
+		</div>
+	</div>
+	<h2>Sponsoring</h2>
+	<div class="portfolioWrapper">
+		<div class="container">
+			<Card title="Sponsoring 1" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry." image="" url="" popup="" popupID="" />
+			<Card title="Sponsoring 2" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry." image="" url="" popup="" popupID="" />
+		</div>
+	</div>
+	<h2>Zertifizierungen</h2>
+	<div class="portfolioWrapper">
+		<div class="container">
+			<Card title="Zertifikat 1" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry." image="" url="" popup="" popupID="" />
+			<Card title="Zertifikat 2" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry." image="" url="" popup="" popupID="" />
+		</div>
+	</div>
+	<div class="blob1 blur"></div>
+	<div class="blob2 blur"></div>
+	<div class="blob3 blur"></div>
+	<div class="blob4 blur"></div>
+</section>
+<style>
+	h2 {
+		font-size: 4rem;
+		font-weight: 500;
+		color: #000;
+		margin-top: 50px;
+		text-align: center;
+		/* margin-bottom: 1rem; */
+	}
+	.portfolioSection {
+		position: relative;
+		width: 100%;
+		/* height: 100vh; */
+		background-color: var(--background-primary);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.portfolioWrapper {
+		width: 90vw;
+		padding-top: 2%;
+		padding-bottom: 2%;
+		height: 96%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.blob1 {
+		position: absolute;
+		top: 30vh;
+		left: -100px;
+		width: 250px;
+		height: 150px;
+		background-color: rgb(255, 0, 0);
+		z-index: 100;
+	}
+	.blob2 {
+		position: absolute;
+		top: -20vh;
+		left: 2500px;
+		width: 300px;
+		height: 190px;
+		background-color: rgb(255, 196, 0);
+		z-index: 100;
+	}
+	.blob3 {
+		position: absolute;
+		top: 80vh;
+		left: 1500px;
+		width: 300px;
+		height: 180px;
+		background-color: rgb(30, 214, 30);
+		z-index: 100;
+	}
+	.blob4 {
+		position: absolute;
+		top: 30vh;
+		left: 3500px;
+		width: 300px;
+		height: 150px;
+		background-color: rgba(233, 53, 53, 0.781);
+		z-index: 100;
+	}
+</style>

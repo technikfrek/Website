@@ -21,9 +21,9 @@
 	--greyLight-3: #bec8e4;
 	--greyDark: #9baacf;
 }
-* {
+/* * {
 	cursor: none !important;
-}
+} */
 
 .pinscroll {
 	transform: translate3d(0px, 0px, 0px) !important;
