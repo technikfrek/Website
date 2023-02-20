@@ -11,7 +11,7 @@ const {title, subtitle, image} = Astro.props;
 <div class="headerContainer">
 	<div class="header">
 		<h1>{title}</h1>
-		<p>{subtitle}</p>
+		<h4>{subtitle}</h4>
 	</div>
 	<div class="headerImage">
 		<canvas id="headerCanvas"></canvas>
@@ -30,10 +30,10 @@ const {title, subtitle, image} = Astro.props;
 	app.load("https://prod.spline.design/4-UzVbzMpUZ7aLxY/scene.splinecode");
 
 	const tl = gsap.timeline();
-	tl.fromTo(".header", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"}, "-=0.5")
+	// tl.fromTo(".header", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"}, "-=0.5")
 	tl.fromTo(".headerImage", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
 	tl.fromTo(".headerContainer h1", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
-	tl.fromTo(".headerContainer p", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
+	tl.fromTo(".headerContainer h4", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1, ease: "ease.inOut"});
 
 	document.addEventListener("DOMContentLoaded", function (event) {
 		async function sleep(ms) {

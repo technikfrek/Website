@@ -1,21 +1,75 @@
 ---
-
+let currentYear = new Date().getFullYear();
 ---
 
 <footer>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
+	<div class="footerWrapper">
+		<div class="footerContainer footerContainerLogo">
+            <h3>© {currentYear}</h3>
+            <img src="assets/images/logowhite.svg"/>
+        </div>
+		<div class="footerContainer footerContainerNav">
+            <h4><a href="#dienstleistungen">Dienstleistungen</a></h4>
+            <h4><a href="#referenzen">Referenzen</a></h4>
+            <h4><a href="#zertifizierungen">Zertifizierungen</a></h4>
+            <h4><a href="#kontakt">Kontakt</a></h4>
+        </div>
+		<div class="footerContainer"></div>
+	</div>
 </footer>
 <style>
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 400px;
-    background-color: var(--color-primary);
-    color: #fff;
-    padding: 0 20px;
-}
-
+    .footerContainerNav {
+        display: flex;
+        flex-direction: column;
+        justify-content: left!important;
+        align-items: flex-start!important;
+    }
+    .footerContainer h4 {
+        margin: 5px 0 5px 0!important;
+    }
+    .footerContainer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300!important;
+    }
+    .footerContainerLogo {
+        display: flex;
+        flex-direction: row!important;;
+        justify-content: center;
+        align-items: center;
+    }
+    .footerContainer img {
+        width: 250px;
+        object-fit: contain;
+        margin-left: -25px;
+    }
+    .footerContainer h3 {
+        margin: 0!important;
+    }
+	footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 200px;
+		background-color: var(--color-primary);
+		color: #fff;
+		padding: 0 20px;
+		z-index: 100;
+	}
+    .footerWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+    }
+    .footerContainer {
+        width: 33%;
+        height: 66%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 </style>

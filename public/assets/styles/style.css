@@ -273,6 +273,10 @@ section.horizontal .animation-wrap .item:nth-child(4n + 4) {
 	box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
 		inset -0.2rem -0.2rem 0.5rem var(--white);
 }
+.neuInsideNH {
+	box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+		inset -0.2rem -0.2rem 0.5rem var(--white);
+}
 .neuInside:hover {
 	box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
 }
