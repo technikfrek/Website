@@ -7,7 +7,9 @@ import node from "@astrojs/node";
 import deno from "@astrojs/deno";
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: deno()
+  adapter: node()
 });
