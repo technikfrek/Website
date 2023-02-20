@@ -119,7 +119,6 @@ for (let i = 0; i < popupButtons.length; i++) {
 const popupCloseButtons = document.querySelectorAll(".popup__closer");
 for (let i = 0; i < popupCloseButtons.length; i++) {
 	popupCloseButtons[i].addEventListener("click", function (e) {
-		e.preventDefault();
 		const popupID = this.getAttribute("data-popup-close");
 		console.log(popupID);
 		const popup = document.querySelector(popupID);
